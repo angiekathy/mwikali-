@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Items for Sale</title>
+</head>
+<body>
+    <header>
+        <h1>Items for Sale</h1>
+        <nav>
+            <a href="grace.html">Home</a>
+            <a href="kirui.html">SHOP</a>
+            <a href="kathy.html">ABOUT US</a>
+            <a href="angie.html">CONTACT</a>
+            <a href="Mueni.html">FQA</a>
+            <a href="mwikali.html"login></a>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Products</h2>
+        <div class="product">
+            <h3>jumper wires</h3>
+            <img src="images/jummpers wires.jpeg" />
+            <p>Price: ksh 120</p>
+            <button onclick="addtocart (jumper wires,120)">add to cart></button>
+        </div>
+        <div class="product">
+            <h3>rasberry pi</h3>
+            <img src="images/rasberry pi.jpeg" />
+            <p>Price: ksh 1000</p>
+            <button onclick="addtocart(rasberry pi,1000)">add to cart</button>
+        </div>
+        <div class="product">
+            <h3>moisture sensor</h3>
+            <img src="images/moisture sensor.jpeg" />
+            <p>Price: ksh 150</p>
+            <button onlcick="addtocart(moisture sensor,150)>add to cart</button>
+        </div>
+
+     
+
+<div class ="product">
+   <h3 >Esp 8266</h3>
+   <img src="images/esp 8266.jpeg"/>
+  <p>price: ksh 1200</p> 
+  <button onclick="addtocart(Esp 8266,1200)">add to cart</button>
+</div>
+<div class ="product">
+ <h3>Arduino uno</h3>  
+  <img src="images/arduino uno.jpeg"/>
+  <p>price: ksh 1500</p>
+  <button onclick="addtocart(Arduino uno,1500)">add to cart</button>
+</div>
+<div>
+  ,<h2>Your Cart</h2>
+   <div id="cart">
+    <ul id="cart-shop"></ul>
+    <p id="total- price">Total :ksh0</p>
+</div>
+<script src="script.js"></script>
+    
+        </main>
+    <footer>
+    
+    </footer>
+</body>
+</html>

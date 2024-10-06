@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop Payment</title>
+    <style>
+        body {
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+           background-color: chartreuse; 
+           
+        }
+    </style>
+</head>
+<body>
+    <h1>PAYMENT</h1>
+    <form id="paymentForm">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+        
+        <label for="paymentMethod">Payment Method:</label>
+        <select id="paymentMethod" required>
+            <option value="cash">Cash</option>
+            <option value="mpesa">M-Pesa</option>
+        </select>
+        
+        <button type="submit">Pay</button>
+    </form>
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const amount = document.getElementById('amount').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            if (paymentMethod === 'mpesa') {
+                // Call your backend M-Pesa payment processing function
+                processMpesaPayment(amount);
+            } else {
+                // Handle cash payment
+                alert('You have selected Cash payment. Please pay at the store.');
+            }
+        });
+
+        function processMpesaPayment(amount) {
+            // Replace with your backend endpoint
+            fetch('/api/process-mpesa', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ amount }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Payment successful! Transaction ID: ' + data.transactionId);
+                } else {
+                    alert('Payment failed: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Payment error. Please try again.');
+            });
+        }
+    </script>
+</html> 
+ </body> 
+        
